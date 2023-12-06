@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" style="--background: #000">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Phaser + Typescript</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--background);
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+      }
+
+      canvas {
+        margin: 0;
+        touch-action: none;
+        -ms-touch-action: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

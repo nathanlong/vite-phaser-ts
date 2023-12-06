@@ -1,0 +1,26 @@
+{
+  "name": "vite-phaser-ts",
+  "version": "1.0.0",
+  "description": "Quickstart template for using Phaser with TypeScript",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
+  },
+  "author": "Nathan Long",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.6"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  }
+}

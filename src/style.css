@@ -1,0 +1,20 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  /* display: grid; */
+  /* place-items: center; */
+  min-height: 100vh;
+}
+
+canvas {
+  margin: 0;
+  touch-action: none;
+  -ms-touch-action: none;
+}
