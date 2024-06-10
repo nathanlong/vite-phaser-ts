@@ -1,22 +1,23 @@
-// this class extends Scene class
-export class Game extends Phaser.Scene {
+export default class Game extends Phaser.Scene {
+  score: number
+  debugText1: Phaser.GameObjects.Text;
+  debugText2: Phaser.GameObjects.Text;
+
   constructor() {
     super({
       key: "Game",
     });
+    this.score = 0
   }
 
-  circle: Phaser.Geom.Circle;
-  graphics: Phaser.GameObjects.Graphics;
-  debugText1: Phaser.GameObjects.Text;
-  debugText2: Phaser.GameObjects.Text;
+  // preload assets
+  preload(): void {
+    // we can pass values to the registry to access in other scenes
+    this.registry.set("score", "0");
+  }
 
-  // method to be called once the instance has been created
+  // initialize the game
   create(): void {
-    const circle = new Phaser.Geom.Circle(480, 270, 100);
-    const graphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });
-    graphics.fillCircleShape(circle);
-
     this.debugText1 = this.add.text(10, 10, "", {
       fontFamily: "Monaco, monospace",
       fontSize: "12px",
@@ -28,6 +29,7 @@ export class Game extends Phaser.Scene {
     });
   }
 
+  // game loop
   update(time: number, delta: number): void {
     this.debugText1.setText(`Time: ${time}`);
     this.debugText2.setText(`Delta: ${delta.toFixed(3)}`);

@@ -1,23 +1,20 @@
 import "./style.css";
 
 import Phaser from "phaser";
-import { Game } from "./scene/game";
-
-// object to initialize the Scale Manager
-const scaleObject: Phaser.Types.Core.ScaleConfig = {
-  mode: Phaser.Scale.FIT,
-  autoCenter: Phaser.Scale.CENTER_BOTH,
-  parent: "app",
-  width: 960,
-  height: 540,
-};
+import Game from "./scenes/game";
 
 // game configuration object
-const configObject: Phaser.Types.Core.GameConfig = {
+const config: Phaser.Types.Core.GameConfig = {
+  width: 960,
+  height: 540,
   type: Phaser.AUTO,
   backgroundColor: 0x140b40,
-  scale: scaleObject,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   scene: [Game],
+  parent: "app",
   pixelArt: false,
   physics: {
     default: "arcade",
@@ -25,10 +22,11 @@ const configObject: Phaser.Types.Core.GameConfig = {
       debug: false,
       gravity: {
         y: 0,
+        x: 0,
       },
     },
   },
 };
 
 // the game itself
-new Phaser.Game(configObject);
+new Phaser.Game(config);
